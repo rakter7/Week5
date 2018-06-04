@@ -25,6 +25,9 @@ public class CommissionEmployee extends Object {
     }
 
     public void setGrossSales(double grossSales) {
+        if(grossSales<0.0){
+            throw new IllegalArgumentException("Gross sales must be > 0");
+        }
         this.grossSales = grossSales;
     }
 
@@ -33,6 +36,9 @@ public class CommissionEmployee extends Object {
     }
 
     public void setCommissionRate(double commissionRate) {
+        if(commissionRate<=0.0 || commissionRate>1.0){
+            throw new IllegalArgumentException("Commsion rate must be >0 and <0");
+        }
         this.commissionRate = commissionRate;
     }
 
